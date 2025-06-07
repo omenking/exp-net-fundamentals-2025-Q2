@@ -2,13 +2,26 @@
 
 ## Technical Video Demostration
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jBpy4_bU5Pk?si=hOpqbXwWb_HD2KLN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+In the video I architect a local Media Server between two houses with a Network Engineer, Cloud Engineer and a Solutions Architect. (2 hour)
 
-```sh
-<Technical Diagram>
-```
+[![alt text](./assets/demo.jpg)](https://www.youtube.com/watch?v=jBpy4_bU5Pk)
 
-- [Technical Justification Journal]()
+### Key Highlights of Video
+- [Traffic Walk Through The  Diagram 51:50 (3 mins)](https://youtu.be/jBpy4_bU5Pk?si=mZvw-8-H4Ve5D1yu&t=3110)
+
+
+## Design Considerations
+
+![](./assets/media-server-network.jpg)
+
+### Why do they have same IP Adress Spaces In Each House?
+We have a flat network. We Implemented the Basic IP Schema for both houses because it was a flat network. Ideally you would not have overlapping networks
+
+### Why not wired connection?
+We used a wirless bridge because it was winter and we could not trench frozen ground. Ideally we run a wired line.
+
+- [Full Technical Journal]()
+
 
 
 
