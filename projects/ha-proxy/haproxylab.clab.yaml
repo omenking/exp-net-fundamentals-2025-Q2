@@ -1,0 +1,39 @@
+name: basic-haproxylab1
+topology:
+  nodes:
+    haproxy:
+      kind: linux
+      image: haproxytech/haproxy-ubuntu:latest
+      binds:
+        - setup-ssh.sh:/setup-ssh.sh
+        - haproxy-new.cfg:/usr/local/etc/haproxy/haproxy-new.cfg
+        - proxy-startup.sh:/proxy-startup.sh
+      exec:
+        - chmod +x /setup-ssh.sh
+        - /setup-ssh.sh
+        - chmod +x /proxy-startup.sh
+        - /proxy-startup.sh
+    web1:
+      kind: linux
+      image: ubuntu/apache2:latest
+      binds:
+        - setup-ssh.sh:/setup-ssh.sh
+        - web1/web.html:/var/www/html/web.html
+        - replace-index.sh:/replace-index.sh
+      exec:
+        - chmod +x /setup-ssh.sh
+        - /setup-ssh.sh
+        - chmod +x /replace-index.sh
+        - /replace-index.sh
+    web2:
+      kind: linux
+      image: ubuntu/apache2:latest
+      binds:
+        - setup-ssh.sh:/setup-ssh.sh
+        - web2/web.html:/var/www/html/web.html
+        - replace-index.sh:/replace-index.sh
+      exec:
+        - chmod +x /setup-ssh.sh
+        - /setup-ssh.sh
+        - chmod +x /replace-index.sh
+        - /replace-index.sh
